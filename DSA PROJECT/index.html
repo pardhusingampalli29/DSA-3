@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f6f5">
+  <title>RouteDesk · Delivery Route Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section id="authGate" class="auth-gate"><div class="auth-intro"><div class="auth-brand"><span class="brand-icon">RD</span><b>RouteDesk</b></div><div class="auth-intro-copy"><div class="eyebrow">DELIVERY ROUTE OPTIMIZER</div><h1>Plan your next<br>delivery route.</h1><p>Manage delivery locations, road distances, and the shortest route from one simple workspace.</p></div><div class="auth-project">Data Structures &amp; Algorithms · Project demo</div></div><div class="auth-side"><div class="auth-box"><div class="auth-mobile-brand"><span class="brand-icon">RD</span><b>RouteDesk</b></div><div class="auth-tabs"><button type="button" class="auth-tab active" data-auth-mode="login">Log in</button><button type="button" class="auth-tab" data-auth-mode="register">Create account</button></div><form id="loginForm" class="auth-form"><div><h2>Welcome back</h2><p>Log in to open your route workspace.</p></div><label for="loginEmail">EMAIL ADDRESS</label><input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required><label for="loginPassword">PASSWORD</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="button primary auth-submit" type="submit">Log in <span>→</span></button><p class="auth-message" id="loginMessage" aria-live="polite"></p></form><form id="registerForm" class="auth-form" hidden><div><h2>Create your account</h2><p>Set up a login for this RouteDesk demo.</p></div><label for="registerName">NAME</label><input id="registerName" type="text" minlength="2" maxlength="60" autocomplete="name" placeholder="Your name" required><label for="registerEmail">EMAIL ADDRESS</label><input id="registerEmail" type="email" autocomplete="email" placeholder="you@example.com" required><label for="registerPassword">PASSWORD</label><input id="registerPassword" type="password" minlength="8" autocomplete="new-password" placeholder="At least 8 characters" required><button class="button primary auth-submit" type="submit">Create account <span>→</span></button><p class="auth-message" id="registerMessage" aria-live="polite"></p></form><p class="auth-local-note">Demo accounts are stored on this computer. Use a sample password, not one you use elsewhere.</p></div></div></section><div class="layout" hidden>
+  <aside class="sidebar">
+    <a class="brand" href="#planner" aria-label="Delivery Route Optimizer"><span class="brand-icon">RD</span><span>RouteDesk<br><b>Delivery Optimizer</b></span></a>
+    <div class="side-caption">PROJECT WORKSPACE</div>
+    <nav class="nav" aria-label="Main navigation">
+      <button class="nav-link active" data-page="planner"><span>↗</span>Route planner</button>
+      <button class="nav-link" data-page="locations"><span>⌖</span>Locations <small id="navLocationCount">7</small></button>
+      <button class="nav-link" data-page="roads"><span>⌁</span>Road connections <small id="navRoadCount">12</small></button>
+    </nav>
+    <div class="algorithm-note"><span class="note-label">ALGORITHM</span><b>Dijkstra's shortest path</b><p>Weighted graph with an adjacency list and min heap.</p><span class="complexity">O((V + E) log V)</span></div>
+    <div class="side-bottom">Project demonstration<br><span>Sample network · edits save in this browser</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="mobile-brand"><span class="brand-icon">RD</span>RouteDesk</div><div class="crumb"><span>RouteDesk</span><i>/</i><b id="crumbPage">Route planner</b></div><div class="top-actions"><span class="account-name" id="accountName">Account</span><span class="saved-label"><i></i><span id="saveStatus">Edits save in this browser</span></span><button class="text-button" id="exportBtn" title="Download a copy of the network data">Export data</button><button class="text-button reset-button" id="resetBtn">Reset demo</button><button class="text-button logout-button" id="logoutBtn">Log out</button></div></header>
+    <div id="app" class="page"></div>
+    <footer class="footer"><span>DSA PROJECT · DELIVERY ROUTE OPTIMIZER</span><span>Section 10 · 25CS2103E · 2026–27</span></footer>
+  </main>
+</div>
+<dialog id="locationDialog" class="dialog"><form id="locationForm" class="dialog-inner"><div class="dialog-head"><div><h2 id="locationDialogTitle">Add a location</h2><p id="locationDialogHelp">Add a delivery point to this network.</p></div><button type="button" class="close-dialog" id="cancelLocation" aria-label="Close">×</button></div><label class="form-label" for="locationName">LOCATION NAME</label><input class="input" id="locationName" maxlength="40" placeholder="e.g. Riverside" required><div class="dialog-actions"><button type="button" class="button" id="cancelLocationBottom">Cancel</button><button class="button primary" type="submit">Save location</button></div></form></dialog><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
